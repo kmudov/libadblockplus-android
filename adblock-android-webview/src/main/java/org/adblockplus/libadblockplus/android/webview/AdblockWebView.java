@@ -1009,7 +1009,7 @@ public class AdblockWebView extends WebView
       final AbpShouldBlockResult abpBlockResult = shouldAbpBlockRequest(request);
 
       // if FilterEngine is unavailable or not enabled, just let it go (and skip sitekey check)
-      if (AbpShouldBlockResult.NOT_ENABLED.equals(abpBlockResult))
+      if (AbpShouldBlockResult.NOT_ENABLED.equals(abpBlockResult) && (extWebViewClient == null))
       {
         clearStylesheets();
         return WebResponseResult.ALLOW_LOAD;
